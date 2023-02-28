@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <style>
+      .buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        gap: 1rem;
+      }
+
+      .buttons button{
+        font-size: 4rem;
+        width: 8rem;
+        aspect-ratio: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ✊ ✋ ✌️ -->
+    <div class="buttons">
+      <button data-selection="rock">✊</button>
+      <button data-selection="paper">✋</button>
+      <button data-selection="scissors">✌️</button>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
