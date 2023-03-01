@@ -89,8 +89,8 @@ function styleWinner() {
   PLAYERS.forEach(player => {
     if (player.isWinner) {
       player.selection.classList.add("winner")
-    } else { 
-      player.selection.classList.remove("winner") 
+    } else {
+      player.selection.classList.remove("winner")
     }
 
   })
@@ -100,7 +100,6 @@ function handleScore() {
   PLAYERS.forEach(player => {
     if (player.isWinner) {
       player.score++;
-      console.log(player.name, player.score);
     } else {
       return
     }
