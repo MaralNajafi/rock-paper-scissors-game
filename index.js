@@ -20,6 +20,19 @@ const SELECTIONS = [
   },
 ];
 
+const PLAYERS = [
+  {
+    name: "user",
+    isWinner: false,
+    score: 0,
+  },
+  {
+    name: "computer",
+    isWinner: false,
+    score: 0,
+  },
+];
+
 DOMselectionButtons.forEach((selectionBtn) => {
   selectionBtn.addEventListener("click", () => {
     const selectionName = selectionBtn.dataset.selection;
@@ -31,6 +44,7 @@ DOMselectionButtons.forEach((selectionBtn) => {
     printSelectionsToDOM(computerSelection, DOMcomputerSelection);
 
     decideWinner(userSelection, computerSelection);
+    handleScore();
 
   });
 });
@@ -56,12 +70,26 @@ function makeRandomSelection() {
 
 function decideWinner(userSelection, computerSelection) {
   if (userSelection.name === computerSelection.name) {
-    console.log("you draw");
+    PLAYERS.forEach(player => { player.isWinner = false })
+
   } else {
     if (userSelection.name === computerSelection.beats) {
-      console.log("you lost");
+      PLAYERS[0].isWinner = false;
+      PLAYERS[1].isWinner = true;
     } else {
-      console.log("you won");
+      PLAYERS[0].isWinner = true;
+      PLAYERS[1].isWinner = false;
     }
   }
+}
+
+function handleScore() {
+  PLAYERS.forEach(player => {
+    if (player.isWinner) {
+      player.score++;
+      console.log(player.name, player.score);
+    } else {
+      return
+    }
+  })
 }
