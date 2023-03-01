@@ -8,11 +8,39 @@
   </head>
   <body>
     <!-- ✊ ✋ ✌️ -->
-    <div class="buttons">
-      <button data-selection="rock">✊</button>
-      <button data-selection="paper">✋</button>
-      <button data-selection="scissors">✌️</button>
+    <div class="main-container">
+      <header class="main-header">
+        <h1>Rock Paper Scissors</h1>
+      </header>
+      <main>
+        <section class="game-section">
+          <div class="user-board">
+            <div>
+              <p>You</p>
+              <div class="user-score" id="userScore">
+                0
+              </div>
+            </div>
+            <div class="selection" id="userSelection">✊</div>
+          </div>
+          <div class="computer-board">
+            <div>
+              <p>Computer</p>
+              <div class="computer-score" id="computerScore">
+                0
+              </div>
+            </div>
+            <div class="selection winner" id="computerSelection">✋</div>
+          </div>
+        </section>
+        <div class="selection-buttons-wrapper">
+          <button data-selection="rock">✊</button>
+          <button data-selection="paper">✋</button>
+          <button data-selection="scissors">✌️</button>
+        </div>
+      </main>
     </div>
+
     <script src="index.js"></script>
   </body>
 </html>
