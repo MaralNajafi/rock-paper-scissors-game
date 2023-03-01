@@ -27,11 +27,13 @@ const PLAYERS = [
     name: "user",
     isWinner: false,
     score: 0,
+    selection: DOMuserSelection,
   },
   {
     name: "computer",
     isWinner: false,
     score: 0,
+    selection: DOMcomputerSelection,
   },
 ];
 
@@ -46,21 +48,12 @@ DOMselectionButtons.forEach((selectionBtn) => {
     printSelectionsToDOM(computerSelection, DOMcomputerSelection);
 
     decideWinner(userSelection, computerSelection);
-    
+    styleWinner();
     printScoresToDOM();
 
   });
 });
 
-function printSelectionsToDOM(selection, place) {
-  place.textContent = selection.sign;
-}
-
-function printScoresToDOM() {
-  handleScore();
-  DOMuserScore.textContent = PLAYERS[0].score;
-  DOMcomputerScore.textContent = PLAYERS[1].score;
-}
 
 function makeSelection(selectionName) {
   const userSelection = SELECTIONS.find((selection) => {
@@ -92,6 +85,17 @@ function decideWinner(userSelection, computerSelection) {
   }
 }
 
+function styleWinner() {
+  PLAYERS.forEach(player => {
+    if (player.isWinner) {
+      player.selection.classList.add("winner")
+    } else { 
+      player.selection.classList.remove("winner") 
+    }
+
+  })
+}
+
 function handleScore() {
   PLAYERS.forEach(player => {
     if (player.isWinner) {
@@ -101,4 +105,14 @@ function handleScore() {
       return
     }
   })
+}
+
+function printSelectionsToDOM(selection, place) {
+  place.textContent = selection.sign;
+}
+
+function printScoresToDOM() {
+  handleScore();
+  DOMuserScore.textContent = PLAYERS[0].score;
+  DOMcomputerScore.textContent = PLAYERS[1].score;
 }
