@@ -4,41 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
     <!-- ✊ ✋ ✌️ -->
     <div class="main-container">
-      <header class="main-header">
+      <header class="main-header d-flex">
         <h1>Rock Paper Scissors</h1>
       </header>
-      <main>
-        <section class="game-section">
-          <div class="user-board">
-            <div>
+      <main class="flex-col ai-center">
+        <section class="game-section flex-row">
+          <div class="user-board flex-col ai-center g-10">
+            <div class="flex-row g-10">
               <p>You</p>
-              <div class="user-score" id="userScore">
-                0
-              </div>
+              <div class="user-score" id="userScore">0</div>
             </div>
             <div class="selection" id="userSelection">✊</div>
           </div>
-          <div class="computer-board">
-            <div>
-              <p>Computer</p>
-              <div class="computer-score" id="computerScore">
-                0
-              </div>
+          <div class="computer-board flex-col ai-center g-10">
+            <div class="flex-row g-10">
+              <p>Bot</p>
+              <div class="computer-score" id="computerScore">0</div>
             </div>
             <div class="selection winner" id="computerSelection">✋</div>
           </div>
         </section>
-        <div class="selection-buttons-wrapper">
-          <button data-selection="rock">✊</button>
-          <button data-selection="paper">✋</button>
-          <button data-selection="scissors">✌️</button>
-        </div>
+        <section class="selection-section flex-col ai-center">
+          <p>Select your move</p>
+          <div class="selection-buttons-wrapper flex-row jc-center">
+            <button data-selection="rock">✊</button>
+            <button data-selection="paper">✋</button>
+            <button data-selection="scissors">✌️</button>
+          </div>
+        </section>
       </main>
     </div>
 
