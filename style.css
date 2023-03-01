@@ -109,6 +109,15 @@
   transform: scale(1.1);
 }
 
+.score{
+  width: 3rem;
+  padding: 2px;
+  border-bottom: 3px solid var(--clr-black);
+  background-color: #fff;
+  text-align: center;
+  
+}
+
 .selection-buttons-wrapper {
   width: 40rem;
   gap: 1rem;
