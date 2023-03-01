@@ -100,14 +100,22 @@
 .selection {
   font-size: 3rem;
   opacity: 0.7;
-  transform: scale(0.8);
   transition: all 250ms;
 }
 
+@keyframes scale {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+.scale{
+  animation-name: scale;
+  animation-duration: 200ms;
+}
 .winner {
   opacity: 1;
   transform: scale(1.1);
 }
+
 
 .score{
   width: 3rem;

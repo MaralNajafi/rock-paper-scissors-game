@@ -1,4 +1,5 @@
 const DOMselectionButtons = document.querySelectorAll("[data-selection]");
+const DOMselections = document.querySelectorAll(".selection");
 const DOMuserSelection = document.getElementById("userSelection");
 const DOMcomputerSelection = document.getElementById("computerSelection");
 const DOMuserScore = document.getElementById("userScore");
@@ -46,6 +47,8 @@ DOMselectionButtons.forEach((selectionBtn) => {
 
     printSelectionsToDOM(userSelection, DOMuserSelection);
     printSelectionsToDOM(computerSelection, DOMcomputerSelection);
+
+    animateDOMselection();
 
     decideWinner(userSelection, computerSelection);
     styleWinner();
@@ -114,4 +117,12 @@ function printScoresToDOM() {
   handleScore();
   DOMuserScore.textContent = PLAYERS[0].score;
   DOMcomputerScore.textContent = PLAYERS[1].score;
+}
+
+function animateDOMselection() {
+  DOMselections.forEach(selection => {
+    //selection animation
+    selection.classList.add("scale");
+    setTimeout(() => { selection.classList.remove("scale"); }, 200)
+  })
 }
