@@ -1,6 +1,8 @@
 const DOMselectionButtons = document.querySelectorAll("[data-selection]");
 const DOMuserSelection = document.getElementById("userSelection");
 const DOMcomputerSelection = document.getElementById("computerSelection");
+const DOMuserScore = document.getElementById("userScore");
+const DOMcomputerScore = document.getElementById("computerScore");
 
 const SELECTIONS = [
   {
@@ -44,13 +46,20 @@ DOMselectionButtons.forEach((selectionBtn) => {
     printSelectionsToDOM(computerSelection, DOMcomputerSelection);
 
     decideWinner(userSelection, computerSelection);
-    handleScore();
+    
+    printScoresToDOM();
 
   });
 });
 
 function printSelectionsToDOM(selection, place) {
   place.textContent = selection.sign;
+}
+
+function printScoresToDOM() {
+  handleScore();
+  DOMuserScore.textContent = PLAYERS[0].score;
+  DOMcomputerScore.textContent = PLAYERS[1].score;
 }
 
 function makeSelection(selectionName) {
