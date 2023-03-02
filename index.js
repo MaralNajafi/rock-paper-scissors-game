@@ -99,6 +99,19 @@ function styleWinner() {
   })
 }
 
+
+function printSelectionsToDOM(selection, place) {
+  place.textContent = selection.sign;
+}
+
+function animateDOMselection() {
+  DOMselections.forEach(selection => {
+    //selection animation
+    selection.classList.add("scale");
+    setTimeout(() => { selection.classList.remove("scale"); }, 200)
+  })
+}
+
 function handleScore() {
   PLAYERS.forEach(player => {
     if (player.isWinner) {
@@ -109,20 +122,8 @@ function handleScore() {
   })
 }
 
-function printSelectionsToDOM(selection, place) {
-  place.textContent = selection.sign;
-}
-
 function printScoresToDOM() {
   handleScore();
   DOMuserScore.textContent = PLAYERS[0].score;
   DOMcomputerScore.textContent = PLAYERS[1].score;
-}
-
-function animateDOMselection() {
-  DOMselections.forEach(selection => {
-    //selection animation
-    selection.classList.add("scale");
-    setTimeout(() => { selection.classList.remove("scale"); }, 200)
-  })
 }
