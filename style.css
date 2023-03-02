@@ -112,7 +112,7 @@
 }
 .winner {
   opacity: 1;
-  filter: drop-shadow(0 0 3px var(--clr-black));
+  filter: drop-shadow(0 0 3px #01480c);
 }
 
 
